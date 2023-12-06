@@ -1,13 +1,14 @@
 import MenuItems from "./MenuItems";
 
-function Header()
+function Header(props)
 {
   return(
    <dir>
-    <h1>This message comes from header component</h1>
-    <MenuItems />
+    {/*<h1 style={{color:'red',backgroundColor:'black'}}>{props.title}</h1>*/}
+    <h1 style={headerStyle}>{props.title}</h1>
     </dir>
   );
 }
 
+const headerStyle = {color:'red',backgroundColor:'black'}
 export default Header;
