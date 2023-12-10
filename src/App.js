@@ -4,6 +4,8 @@ import Header from './components/Header';
 import './App.css';
 import MyMenu from './components/MyMenu';
 import MenuItems from './components/MenuItems';
+import {useState} from 'react';
+import Counter from './components/Counter';
 
 
 /*function Header()
@@ -24,6 +26,12 @@ import MenuItems from './components/MenuItems';
 
 
 function App() {
+  const[data,setData] = useState("React is fun");
+
+  function handleClick(){
+    setData("This is another value");
+  }
+
   const name = "John";
   const x = false;
   return (
@@ -32,7 +40,11 @@ function App() {
     <Header title="Hello React" />
     <h3>This line is for testing.</h3>
     <MyMenu />
+    {data}
+    <button onClick={handleClick}>Click me</button>
+    <Counter />
     </div>
+    
   );
 }
 
